@@ -5,9 +5,9 @@
 #define MAX_LEN 256
 #define NUM_BYTES 32
 
-//checks a string for unique characters.
+//Checks a string for unique characters. Program takes 1 argument (a string).
 
-//returns 1 on failure (char is not unique), 0 on success (char is unique and bit is now set)
+//Function returns 1 on failure (char is not unique), 0 on success (char is unique sets bit in bit_map)
 int check_and_set_bit (int char_val, unsigned char *bit_map){
 
 	//since each unsigned char is 8 bits
@@ -31,13 +31,10 @@ int check_and_set_bit (int char_val, unsigned char *bit_map){
 	//otherwise, set the bit and return 0
 	bit_map[bit_index] |= shifted_bit_in_byte;
 	return 0; 
-
-
 }
 
-
-
-//prints and exits with 1 on failure (string is not unique), 0 on success (each char is unique)
+//Prints and exits with 1 on failure (chars in string is not unique),
+// 0 on success (chars in string are unique).
 int main (int argc, char **argv){
 
 	if (argc != 2){

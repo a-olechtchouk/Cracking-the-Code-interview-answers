@@ -4,7 +4,7 @@
 
 #define MAX_LEN 32
 
-//reverse a c-styled string
+//Reverse a string. Program takes 1 argument (a string). Uses two char pointers going forward and back.
 int main (int argc, char **argv){
 
 	if (argc != 2){
@@ -23,12 +23,11 @@ int main (int argc, char **argv){
 		exit(0);
 	}
 
-
 	char *forwards = &buf[0];
 	char *backwards = &buf[MAX_LEN-2];
 
-	//find the last character in the string that is not a null term
-	//the backwards ptr will start at that index and move backwards
+	//find the last character in the string that is not a null term.
+	//the backwards ptr will start at that index and move backwards.
 	int done = 1;
 	while (done){
 		if (*backwards == '\0'){
@@ -46,8 +45,7 @@ int main (int argc, char **argv){
 
 	int i=0;
 	for (i; i < num_swaps; i++){
-
-		//save a temp char so that one of the chars is saved during the swap
+		//save a temp char so that one of the chars is saved for the swap
 		temp = *forwards;
 
 		//perform swap
@@ -58,7 +56,6 @@ int main (int argc, char **argv){
 		forwards++;
 		backwards--;
 	}
-
 	printf("%s\n", buf);
 	exit(0);
 }
